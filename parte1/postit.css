@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+body {
+  font-family: "Permanent Marker", cursive;
+}
+
+#container {
+  margin-top: 10em;
+  margin-left: 8em;
+}
+
+#blackboard {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  border: 15px solid #a1662f;
+  width: 1000px;
+  height: 420px;
+  background-color: #666666;
+}
+
+.post-it {
+  width: 205px;
+  height: 160px;
+  box-shadow: 15px 19px 7px -8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.post-it h2 {
+  font-size: 2.5em;
+}
+
+.post-it p {
+  font-size: 1.2em;
+}
+
+.post-it:nth-of-type(1) {
+  background: linear-gradient(
+    180deg,
+    rgba(202, 252, 204, 1) 50%,
+    rgba(159, 181, 161, 1) 100%
+  );
+
+  transform: rotate(350deg);
+  animation: attachpostIt 1s linear 1 forwards;
+}
+
+.post-it:nth-of-type(2) {
+  background: linear-gradient(
+    180deg,
+    rgba(254, 254, 204, 1) 53%,
+    rgba(189, 189, 163, 1) 100%
+  );
+
+  transform: rotate(7deg);
+  animation: attachpostIt2 1s linear 1 forwards;
+}
+.post-it:nth-of-type(3) {
+  background: linear-gradient(
+    180deg,
+    rgba(201, 201, 247, 1) 50%,
+    rgba(139, 140, 155, 1) 100%
+  );
+  transform: rotate(350deg);
+  animation: attachpostIt3 1s linear 1 forwards;
+}
+
+.post-it:nth-of-type(4) {
+  background: linear-gradient(
+    180deg,
+    rgba(254, 254, 204, 1) 53%,
+    rgba(189, 189, 163, 1) 100%
+  );
+  transform: rotate(7deg);
+  animation: attachpostIt2 1s linear 1 forwards;
+}
+
+.post-it:nth-of-type(5) {
+  background: linear-gradient(
+    180deg,
+    rgba(201, 201, 247, 1) 50%,
+    rgba(139, 140, 155, 1) 100%
+  );
+  transform: rotate(350deg);
+  animation: attachpostIt3 1s linear 1 forwards;
+}
+
+.post-it:nth-of-type(6) {
+  background: linear-gradient(
+    180deg,
+    rgba(254, 254, 204, 1) 53%,
+    rgba(189, 189, 163, 1) 100%
+  );
+  transform: rotate(7deg);
+  animation: attachpostIt2 1s linear 1 forwards;
+}
+
+.post-it:nth-of-type(7) {
+  background: linear-gradient(
+    180deg,
+    rgba(201, 201, 247, 1) 50%,
+    rgba(139, 140, 155, 1) 100%
+  );
+  transform: rotate(350deg);
+  animation: attachpostIt3 1s linear 1 forwards;
+}
+
+.post-it:nth-of-type(8) {
+  background: linear-gradient(
+    180deg,
+    rgba(202, 252, 204, 1) 50%,
+    rgba(159, 181, 161, 1) 100%
+  );
+  transform: rotate(350deg);
+  animation: attachpostIt 1s linear 1 forwards;
+}
+
+@keyframes post-it1 {
+  0% {
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes attachpostIt {
+  0% {
+    transform: translate(-400px);
+  }
+
+  100% {
+    transform: translate(0px);
+    transform: rotate(350deg);
+  }
+}
+
+@keyframes attachpostIt2 {
+  0% {
+    transform: translate(700px);
+  }
+
+  100% {
+    transform: translate(0px);
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes attachpostIt3 {
+  0% {
+    transform: translateY(500px);
+  }
+
+  100% {
+    transform: translate(0px);
+    transform: rotate(350deg);
+  }
+}
+
+.post-it:hover {
+  animation: post-it1 0.2s linear 1 forwards;
+}
