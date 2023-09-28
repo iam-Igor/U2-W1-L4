@@ -19,7 +19,7 @@ body {
   width: 1000px;
   height: 420px;
   background-color: #666666;
-  box-shadow: 15px 19px 7px -8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 60px 80px rgba(0, 0, 0, 0.6), 0 45px 26px rgba(0, 0, 0, 0.14);
 }
 
 .post-it {
@@ -30,6 +30,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: drop 2s ease forwards;
+  animation-iteration-count: 1;
 }
 
 .post-it h2 {
@@ -46,9 +48,6 @@ body {
     rgba(202, 252, 204, 1) 50%,
     rgba(159, 181, 161, 1) 100%
   );
-
-  transform: rotate(350deg);
-  animation: attachpostIt 1s linear 1 forwards;
 }
 
 .post-it:nth-of-type(2) {
@@ -57,9 +56,6 @@ body {
     rgba(254, 254, 204, 1) 53%,
     rgba(189, 189, 163, 1) 100%
   );
-
-  transform: rotate(7deg);
-  animation: attachpostIt2 1s linear 1 forwards;
 }
 .post-it:nth-of-type(3) {
   background: linear-gradient(
@@ -67,8 +63,6 @@ body {
     rgba(201, 201, 247, 1) 50%,
     rgba(139, 140, 155, 1) 100%
   );
-  transform: rotate(350deg);
-  animation: attachpostIt3 1s linear 1 forwards;
 }
 
 .post-it:nth-of-type(4) {
@@ -77,8 +71,6 @@ body {
     rgba(254, 254, 204, 1) 53%,
     rgba(189, 189, 163, 1) 100%
   );
-  transform: rotate(7deg);
-  animation: attachpostIt2 1s linear 1 forwards;
 }
 
 .post-it:nth-of-type(5) {
@@ -87,8 +79,6 @@ body {
     rgba(201, 201, 247, 1) 50%,
     rgba(139, 140, 155, 1) 100%
   );
-  transform: rotate(350deg);
-  animation: attachpostIt3 1s linear 1 forwards;
 }
 
 .post-it:nth-of-type(6) {
@@ -97,8 +87,6 @@ body {
     rgba(254, 254, 204, 1) 53%,
     rgba(189, 189, 163, 1) 100%
   );
-  transform: rotate(7deg);
-  animation: attachpostIt2 1s linear 1 forwards;
 }
 
 .post-it:nth-of-type(7) {
@@ -107,8 +95,6 @@ body {
     rgba(201, 201, 247, 1) 50%,
     rgba(139, 140, 155, 1) 100%
   );
-  transform: rotate(350deg);
-  animation: attachpostIt3 1s linear 1 forwards;
 }
 
 .post-it:nth-of-type(8) {
@@ -117,12 +103,38 @@ body {
     rgba(202, 252, 204, 1) 50%,
     rgba(159, 181, 161, 1) 100%
   );
-  transform: rotate(350deg);
-  animation: attachpostIt 1s linear 1 forwards;
 }
 
 .post-it:hover {
-  animation: post-it1 0.2s linear 1 forwards;
+  animation: drop 2s ease forwards, post-it1 0.5s ease forwards;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-400px) scaleY(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(20px) scaleY(1);
+    opacity: 1;
+  }
+  65% {
+    transform: translateY(-17px) scaleY(0.9);
+    opacity: 1;
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: translateY(-22px) scaleY(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 1;
+    transform: rotate(-10deg);
+  }
 }
 
 @keyframes post-it1 {
@@ -130,44 +142,7 @@ body {
     transform: rotate(-15deg);
   }
 
-  50% {
-    transform: rotate(-8deg);
-  }
-
   100% {
     transform: rotate(0deg);
-  }
-}
-
-@keyframes attachpostIt {
-  0% {
-    transform: translate(-400px);
-  }
-
-  100% {
-    transform: translate(0px);
-    transform: rotate(350deg);
-  }
-}
-
-@keyframes attachpostIt2 {
-  0% {
-    transform: translate(700px);
-  }
-
-  100% {
-    transform: translate(0px);
-    transform: rotate(7deg);
-  }
-}
-
-@keyframes attachpostIt3 {
-  0% {
-    transform: translateY(500px);
-  }
-
-  100% {
-    transform: translate(0px);
-    transform: rotate(350deg);
   }
 }
