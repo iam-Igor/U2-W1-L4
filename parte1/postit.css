@@ -19,6 +19,7 @@ body {
   width: 1000px;
   height: 420px;
   background-color: #666666;
+  box-shadow: 15px 19px 7px -8px rgba(0, 0, 0, 0.3);
 }
 
 .post-it {
