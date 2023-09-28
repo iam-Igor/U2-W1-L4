@@ -29,6 +29,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .post-it h2 {
   font-size: 2.5em;
 }
@@ -118,9 +119,17 @@ body {
   animation: attachpostIt 1s linear 1 forwards;
 }
 
+.post-it:hover {
+  animation: post-it1 0.2s linear 1 forwards;
+}
+
 @keyframes post-it1 {
   0% {
     transform: rotate(-15deg);
+  }
+
+  50% {
+    transform: rotate(-8deg);
   }
 
   100% {
@@ -159,8 +168,4 @@ body {
     transform: translate(0px);
     transform: rotate(350deg);
   }
-}
-
-.post-it:hover {
-  animation: post-it1 0.2s linear 1 forwards;
 }

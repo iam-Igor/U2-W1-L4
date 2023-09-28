@@ -8,3 +8,56 @@
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
 
+main {
+  flex-direction: row;
+  width: 900px;
+  height: 500px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+#testoAlternato {
+  width: 50%;
+  border: 2px solid black;
+}
+
+.parole i:first-of-type {
+  color: blue;
+  background-color: chartreuse;
+  display: inline-block;
+  opacity: 0;
+  animation: fade-in 1s ease-in forwards, fade-out 4s 1s ease-out forwards;
+}
+
+.parole i:nth-child(2) {
+  color: white;
+  background-color: darkcyan;
+  display: inline-block;
+  opacity: 0;
+  transform: translate(-100px);
+  animation: fade-in 1s 4s ease-in forwards, fade-out 4s 4s ease-out forwards;
+}
+
+.parole i:nth-child(3) {
+  color: red;
+  background-color: lightsteelblue;
+  opacity: 0;
+  transform: translate(-201px);
+  display: inline-block;
+  animation: fade-in 1s 8s ease-in forwards, fade-out 4s 7s ease-out forwards;
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
